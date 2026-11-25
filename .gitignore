@@ -1,0 +1,13 @@
+# Local Python environment
+.venv/
+.env
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Generated checks and large training artifacts
+starter_check.png
+*.pt
+*.pth
+*.ckpt
+output/raw/
