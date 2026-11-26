@@ -133,25 +133,25 @@ The Module 09 example reports a 64-transition sliding window that did not hurt C
 
 | Configuration A | Range A | Configuration B | Range B | Decision |
 | --- | ---: | --- | ---: | --- |
-| Full DQN | 45.32–118.35 | No target network | 9.53–9.61 | Clear: Full DQN higher |
-| Full DQN | 45.32–118.35 | No replay | 9.53–9.61 | Clear: Full DQN higher |
-| Full DQN | 45.32–118.35 | Replay capacity 1,000 | 117.88–150.54 | Ranges overlap |
-| Full DQN | 45.32–118.35 | REINFORCE | 178.91–192.90 | Clear: REINFORCE higher |
-| Full DQN | 45.32–118.35 | PPO | 155.23–179.27 | Clear: PPO higher |
-| No target network | 9.53–9.61 | No replay | 9.53–9.61 | Ranges overlap |
-| No target network | 9.53–9.61 | Replay capacity 1,000 | 117.88–150.54 | Clear: Replay capacity 1,000 higher |
-| No target network | 9.53–9.61 | REINFORCE | 178.91–192.90 | Clear: REINFORCE higher |
-| No target network | 9.53–9.61 | PPO | 155.23–179.27 | Clear: PPO higher |
-| No replay | 9.53–9.61 | Replay capacity 1,000 | 117.88–150.54 | Clear: Replay capacity 1,000 higher |
-| No replay | 9.53–9.61 | REINFORCE | 178.91–192.90 | Clear: REINFORCE higher |
-| No replay | 9.53–9.61 | PPO | 155.23–179.27 | Clear: PPO higher |
-| Replay capacity 1,000 | 117.88–150.54 | REINFORCE | 178.91–192.90 | Clear: REINFORCE higher |
-| Replay capacity 1,000 | 117.88–150.54 | PPO | 155.23–179.27 | Clear: PPO higher |
-| REINFORCE | 178.91–192.90 | PPO | 155.23–179.27 | Ranges overlap |
+| Full DQN | 45.32-118.35 | No target network | 9.53-9.61 | Clear: Full DQN higher |
+| Full DQN | 45.32-118.35 | No replay | 9.53-9.61 | Clear: Full DQN higher |
+| Full DQN | 45.32-118.35 | Replay capacity 1,000 | 117.88-150.54 | Ranges overlap |
+| Full DQN | 45.32-118.35 | REINFORCE | 178.91-192.90 | Clear: REINFORCE higher |
+| Full DQN | 45.32-118.35 | PPO | 155.23-179.27 | Clear: PPO higher |
+| No target network | 9.53-9.61 | No replay | 9.53-9.61 | Ranges overlap |
+| No target network | 9.53-9.61 | Replay capacity 1,000 | 117.88-150.54 | Clear: Replay capacity 1,000 higher |
+| No target network | 9.53-9.61 | REINFORCE | 178.91-192.90 | Clear: REINFORCE higher |
+| No target network | 9.53-9.61 | PPO | 155.23-179.27 | Clear: PPO higher |
+| No replay | 9.53-9.61 | Replay capacity 1,000 | 117.88-150.54 | Clear: Replay capacity 1,000 higher |
+| No replay | 9.53-9.61 | REINFORCE | 178.91-192.90 | Clear: REINFORCE higher |
+| No replay | 9.53-9.61 | PPO | 155.23-179.27 | Clear: PPO higher |
+| Replay capacity 1,000 | 117.88-150.54 | REINFORCE | 178.91-192.90 | Clear: REINFORCE higher |
+| Replay capacity 1,000 | 117.88-150.54 | PPO | 155.23-179.27 | Clear: PPO higher |
+| REINFORCE | 178.91-192.90 | PPO | 155.23-179.27 | Ranges overlap |
 
 ## Conclusion
 
-I would choose REINFORCE for high final return within this CartPole budget. It had the highest mean final return (185.44), reached 150 in all three seeds, and trained in 5.3–6.1 seconds per seed. Its final-return range overlaps PPO's, and PPO reached 150 earlier on seed 0 (13,500 versus 14,500 steps).
+I would choose REINFORCE for high final return within this CartPole budget. It had the highest mean final return (185.44), reached 150 in all three seeds, and trained in 5.3-6.1 seconds per seed. Its final-return range overlaps PPO's, and PPO reached 150 earlier on seed 0 (13,500 versus 14,500 steps).
 
 I would choose DQN with the 1,000-transition buffer to reach 150 early. It reached the threshold in all three seeds and crossed as early as 6,500 steps. Full DQN crossed sooner on seed 0 (8,000 versus 12,500 steps), and both policy-gradient agents had clearly higher final returns under the decision rule.
 
